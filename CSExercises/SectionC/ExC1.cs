@@ -10,12 +10,19 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
+            //YOUR CODE HERE
             Console.Write("Please enter your name: ");
             string name = Console.ReadLine();
             Console.Write("Please enter your gender (M/F): ");
             string gender = Console.ReadLine();
-
-            //YOUR CODE HERE
+            if (gender == "M")
+            {
+                Console.WriteLine("Good Morning Mr.{0}", name);
+            }
+            else if (gender == "F") {
+                Console.WriteLine("Good Morning Mrs.{0}", name);
+            }
+            
         }
     }
 }

@@ -22,15 +22,42 @@ namespace CSExercises
         {
 
             //Your code here
+            Console.WriteLine("please input how many miles u already ran:");
+            double miles = Convert.ToDouble(Console.ReadLine());
 
+            miles = (Math.Ceiling(miles * 10))/10;
 
+            double fare = CalculateFare(miles);
+            if (fare == -1)
+            {
+                Console.WriteLine("**error**");
+            }
+            else {
+                Console.WriteLine(fare);
+            }
+            
 
         }
 
         public static double CalculateFare(double distance)
         {
             //YOUR CODE HERE
-            return 0;
+
+            if (0<=distance&&distance <= 0.5)
+            {
+                return 2.40;
+
+            }
+            else if (0 <= distance && distance <= 9)
+            {
+                return 2.40 + (distance * 10 - 85) * 0.04;
+            }
+            else if (distance > 9)
+            {
+                return 2.40 + 85 * 0.04 + (distance - 9) * 10 * 0.05;
+            }
+            else { return -1;
+            }
 
 
 

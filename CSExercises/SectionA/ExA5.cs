@@ -24,7 +24,8 @@ namespace CSExercises
             double inputDbl = Convert.ToDouble(inputStr);
 
             //YOUR CODE HERE
-
+            Console.WriteLine("the input is {0}", inputDbl);
+            Console.WriteLine("the output is {0:0.00}", inputDbl);
         }
 
     }

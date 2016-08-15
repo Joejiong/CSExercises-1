@@ -21,13 +21,17 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            Console.WriteLine("please input a double precision number !!!");
+            Double d = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("the square root of the number is {0}", SQRT(d));
         }
 
         public static string SQRT(double x)
         {
             //YOUR CODE HERE: return the square root of x and then use String.Format 
             //to format it. The format is similar to WriteLine
-            return null;
+            x = System.Math.Sqrt(x);
+            return String.Format("the x^1/2={0:0.###}",x);
 
         }
     }

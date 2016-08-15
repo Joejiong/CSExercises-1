@@ -19,7 +19,8 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            System.Console.WriteLine("wu jionghao");
+            System.Console.WriteLine("1004691415@qq.com");
         }
     }
 }

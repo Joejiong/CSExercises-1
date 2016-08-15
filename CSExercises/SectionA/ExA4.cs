@@ -15,13 +15,17 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //PUT YOUR CODE HERE           
+            //PUT YOUR CODE HERE   
+           
+            double d = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(square(d));
         }
 
         public static double square(double x)
         {
             //PUT YOUR CODE HERE
-            return 0;
+            x *= x;
+            return x;
 
         }
     }

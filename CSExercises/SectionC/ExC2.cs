@@ -20,8 +20,35 @@ namespace CSExercises
             string gender = Console.ReadLine();
             Console.Write("Please enter your age: ");
             int age = Convert.ToInt32(Console.ReadLine());
-
+            string g;
+            string a="";
             //YOUR CODE HERE
+            if (gender == "M")
+            {
+                if (age >= 40)
+                {
+                    a = "Uncle";
+
+                }
+                else {
+                    a = "Mr";
+                        
+                }
+            }
+            else if (gender == "F")
+            {
+                if (age >= 40)
+                {
+                    a = "Aunty";
+
+                }
+                else
+                {
+                    a = "Mrs";
+
+                }
+            }
+            Console.WriteLine("Good morning {0},{1}",a,name);
         }
     }
 }

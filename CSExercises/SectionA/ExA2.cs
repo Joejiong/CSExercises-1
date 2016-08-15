@@ -18,7 +18,7 @@ namespace CSExercises
         {
             string name = Console.ReadLine();
             //YOUR CODE HERE
-
+            Console.WriteLine("Good Morning {0}",name);
         }
     }
 }
