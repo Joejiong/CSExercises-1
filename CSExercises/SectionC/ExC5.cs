@@ -35,7 +35,7 @@ namespace CSExercises
             double c = Math.Pow(n / 100 % 10, 3);
 
             double sum = a + b + c;
-
+            
             if (sum==n) {
                 return true;
             }

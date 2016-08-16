@@ -23,6 +23,16 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            Console.WriteLine(" //NO            INVERSE         SQUARE ROOT    SQUARE");
+            for (int i = 1; i<10 ;i++) {
+                double inverse = 1 / i;
+                double srtRoot = Math.Sqrt(i);
+                double square = Math.Pow(i, 2);
+                Console.WriteLine(" //{0:0.0}            {1:0.###}         {2:0.0##}         {3:0.0}",i,inverse, srtRoot,square);
+
+
+            }
+           
         }
     }
 }

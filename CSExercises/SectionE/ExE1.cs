@@ -20,26 +20,43 @@ namespace CSExercises
         {
             Console.Write("Enter a number: ");
             int n = Convert.ToInt32(Console.ReadLine());
-
-            int fact1 = CalculateFactorialInc(n);
-            Console.WriteLine(fact1);
-
-            int fact2 = CalculateFactorialDec(n);
-            Console.WriteLine(fact2);
+           
+            CalculateFactorialInc(n);
+            Console.WriteLine("********************************************");
+            CalculateFactorialDec(n);
+            
         }
 
-        public static int CalculateFactorialInc(int n)
+        public static void CalculateFactorialInc(int n)
         {
             //YOUR CODE HERE
-            return 0;
+            
+            int k = 1;
+            while ( k <= n ) {
+
+         
+                if ( n % k == 0)
+                {
+                    Console.WriteLine("there is a factor :"+k);
+                    
+                   
+                }
+                k++;
+            }  
+           
 
 
         }
 
-        public static int CalculateFactorialDec(int n)
+        public static void CalculateFactorialDec(int n)
         {
             //YOUR CODE HERE
-            return 0;
+
+            for (int i = 1; i <=n ;i++) {
+                if (n%i==0) {
+                    Console.WriteLine("the factor is :"+i);
+                }
+            }
 
 
         }

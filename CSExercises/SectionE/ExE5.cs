@@ -12,8 +12,15 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            for (int i = 5;i<=10000;i++) {
+                if (ExE3.IsPrime(i)) {
+                    Console.Write(i);
+                    Console.Write("\t");
+                }
+            }
             //Hint: you can call ExE3.IsPrime method (from previous exercise) 
             //to check whether a number is a prime or not.
+
 
 
         }
