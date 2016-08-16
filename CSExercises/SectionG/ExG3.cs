@@ -22,7 +22,21 @@ namespace CSExercises
         public static string ToTitleCase(string phrase)
         {
             //YOUR CODE HERE
-            return null;
+            string[] s = phrase.Split();
+            string[] s2 = phrase.Split();
+
+
+            for (int i=0; i< s.Length ;i++) {
+                s[i] = s[i].ToUpper();
+                s[i] = s[i].Substring(0, 1);
+                s2[i] = s2[i].Substring(1,s2[i].Length-1);
+            }
+            string newstring = "";
+            for (int i=0; i < s.Length ;i++) {
+                newstring = newstring +s[i]+s2[i]+" ";
+            }
+            newstring = newstring.Substring(0, (newstring.Length - 1));
+            return newstring;
 
 
         }

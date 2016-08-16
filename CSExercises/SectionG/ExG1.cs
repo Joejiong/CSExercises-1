@@ -32,7 +32,9 @@ namespace CSExercises
         public static int CountVowels(string phrase)
         {
             //YOUR CODE HERE
-            return 0;
+            string[] s = phrase.Split('a','e','i','o','u');
+            int k = s.Length - 1;
+            return k;
 
 
         }
@@ -41,6 +43,13 @@ namespace CSExercises
         {
             int[] vowelCount = new int[5];
             //YOUR CODE HERE
+            for (int i=0; i<5 ;i++) {
+                char index = vowels[i];
+                string[] s = phrase.Split(index);
+                vowelCount[i] = s.Length - 1;
+            }
+            
+
 
 
 
