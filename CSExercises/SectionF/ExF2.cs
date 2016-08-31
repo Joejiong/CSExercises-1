@@ -15,6 +15,11 @@ namespace CSExercises
 
             Sort(list);
 
+            printNums(list);
+        
+        }
+
+        public static void printNums(int[] list) {
             for (int k = 0; k < list.Length; k++)
             {
                 Console.Write(list[k] + " ");
@@ -26,6 +31,23 @@ namespace CSExercises
         {
             //YOUR CODE HERE
             //Sort the list
+            int green = 0;
+            int red = 0;
+
+            for (green=0;green < values .Length-1 ;green ++) {
+                for (red = green +1;red <values .Length  ;red ++) {
+                    if (values [green ]<values [red ]) {
+
+                        int temp = values[green];
+                        values[green ]= values[red];
+                        values[red] = temp;
+                    }
+                    printNums(values );
+
+                }
+
+
+            }
 
         }
 

@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSExercises.ExG4</StartupObject>
+    <StartupObject>CSExercises.ExI2</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Cases\Class1.cs" />
     <Compile Include="SectionB\ExB2.cs" />
     <Compile Include="SectionB\ExB1.cs" />
     <Compile Include="SectionA\ExA1.cs" />

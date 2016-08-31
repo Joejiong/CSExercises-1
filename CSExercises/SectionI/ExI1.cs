@@ -20,13 +20,59 @@ namespace CSExercises
 
     public class ExI1
     {
+
+       
         public static void Main(string[] args)
         {
-            Console.Write("Enter the amount: ");
+            Console.Write("Enter the amount which is between (0.05-3.50): ");
             double amount = Convert.ToDouble(Console.ReadLine());
-
+            int  theNum = (int )(amount * 100);
+          
             //YOUR CODE HERE
+            int[] coins = new int[6] { 100, 50, 20, 10, 5, 0 };
 
+            //int[] x = new int[5] { 0, 0, 0, 0, 0 };
+
+
+
+
+            //int j = 0;
+
+            //Console.Write(findPosition (coins ,theNum ));
+
+            while (theNum>1)
+            {
+
+                int index = findPosition(coins, theNum);
+                Console.WriteLine(index);
+                theNum = jianDiao(coins, theNum, index);
+                Console.WriteLine(theNum);
+                
+            }
+            //for (int j = 0; j < x.Length; j++)
+            //{
+            //    Console.Write(x[j] + "  ");
+            //}
+
+        }
+        public static int jianDiao(int[] coins,int theNum,int post) {
+
+            theNum = theNum - coins[post];
+
+            return theNum ;
+        }
+
+        public static int findPosition(int[] coins,int theNum) {
+            int index = 0;
+            //100, 50, 20, 10, 5
+            for (int i =0;i<coins.Length ; i++) {
+                if (theNum <coins [i]) {
+                    index = i+1;
+                    
+                }
+            }
+
+            return index;
 
         }
     }

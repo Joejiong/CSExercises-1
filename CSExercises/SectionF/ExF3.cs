@@ -26,7 +26,7 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            int [,] marks = new int[,]
+            int[,] marks = new int[,]
             {
                 {56,84,68,29},
                 {94,73,31,96},
@@ -49,16 +49,21 @@ namespace CSExercises
 
             for (int row = 0; row < 12; row++)
             {
-                Console.WriteLine("Total marks for student {0}: {1}",row,total[row]);
-                Console.WriteLine("Avg marks for student {0}: {1}", row, avg[row]);
+                Console.WriteLine("Total marks for student {0}: {1}", row + 1, total[row]);
+                Console.WriteLine("Avg marks for student {0}: {1:0.00}", row + 1, avg[row]);
             }
 
             for (int col = 0; col < 4; col++)
             {
-                Console.WriteLine("Avg marks for subject {0}: {1}", col, avgPerSubject[col]);
+                Console.WriteLine("Avg marks for subject {0}: {1:0.00}", col + 1, avgPerSubject[col]);
             }
-
+            double[] standardVarience = ExF3.CalculateVariance(marks);
+            for (int col = 0; col < 4; col++)
+            {
+                Console.WriteLine("the standard varience for subject {0}: {1:0.00}", col + 1, standardVarience[col]);
+            }
         }
+        
 
         public static int[] CalculateTotalMarks(int[,] marks)
         {
@@ -66,6 +71,12 @@ namespace CSExercises
             int[] total = new int[12];
 
             //YOUR CODE HERE
+            for (int i = 0; i<marks .GetLength (0);i++) {
+                for (int j = 0; j<marks.GetLength(1);j++) {
+                    total[i] += marks[i,j];
+                }
+            }
+
             return total;
 
 
@@ -73,21 +84,48 @@ namespace CSExercises
 
         public static double[] CalculateStudentAverage(int[,] marks)
         {
-            double[] avg = new double[12];
+           
 
+            double[] avgPerStuent = new double[12];
+            int[] sum = new int[12];
             //YOUR CODE HERE
-            return avg;
 
+            //for (int i = 0; i < marks.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < marks.GetLength(1); j++)
+            //    {
+            //        sum[i] = sum[i] + marks[i, j];
 
+            //    }
+            //}
+            sum= CalculateTotalMarks(marks );
+            for (int i = 0; i < 12; i++)
+            {
+                avgPerStuent[i] = sum[i] / 4;
+            }
+
+            return avgPerStuent;
 
         }
 
         public static double[] CalculateSubjectAverage(int[,] marks)
         {
-            double[] avgPerSubject = new double[4];
-
+            double[] avg = new double[12];
+            double[] sum = new double[12];
             //YOUR CODE HERE
-            return avgPerSubject;
+            for (int i = 0; i < marks.GetLength(0); i++)
+            {
+                for (int j = 0; j < marks.GetLength(1); j++)
+                {
+                    sum[j] = sum[j] + marks[i, j];
+
+                }
+            }
+            for (int j = 0; j < 4; j++)
+            {
+                avg[j] = sum[j] / 12;
+            }
+            return avg;
 
 
 
@@ -97,8 +135,29 @@ namespace CSExercises
 
         public static double[] CalculateVariance(int[,] marks)
         {
-            double[] variance = new double[12];
+            double[] variance = new double[4];
             //YOUR CODE HERE - bonus questions
+            double[] sumOfStudent = new double[12];
+            double[] avgOfSubject = CalculateSubjectAverage(marks );
+
+            avgOfSubject = CalculateSubjectAverage(marks );
+            for (int i = 0; i<marks .GetLength (0);i++) {
+                for (int j = 0; j <marks .GetLength (1);j++) {
+                    sumOfStudent [j] += Math.Pow((marks[i, j] - avgOfSubject[j]), 2);
+                }
+                 
+            }
+            for (int i= 0;i<4 ;i++) {
+                variance[i] = sumOfStudent[i] / 12;
+
+            }
+            //Standard Deviation is square root of variance where Variance is given by:
+            //	VARIANCE = { [SUM OF(Xi - M)2] / N }; i = 1 to N
+            //      N is number of data elements(Xi) and
+            //      M is mean(average). 
+
+
+
             return variance;
         }
     }

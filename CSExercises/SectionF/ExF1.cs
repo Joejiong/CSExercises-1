@@ -20,17 +20,21 @@ namespace CSExercises
 
     public class ExF1
     {
+
+        static int count = 0;
+        static int count2 = 0;
         public static void Main(string[] args)
         {
             int[] sales = new int[12];
+           
             for (int n = 0; n < 12; n++)
             {
-                Console.Write("Enter sales for month {0}: " , n);
+                Console.Write("Enter sales for month {0}: " , n+1);
                 sales[n] = Convert.ToInt32(Console.ReadLine());
             }
 
             int max = 0;
-            int min = 0;
+            int min = 1000000000;
             double avg = 0;
 
             CalculateMinMaxAvg(sales, ref min, ref max, ref avg);
@@ -38,13 +42,29 @@ namespace CSExercises
             Console.WriteLine("Maximum Sales: " + max);
             Console.WriteLine("Minimum Sales: " + min);
             Console.WriteLine("Average Sales: " + avg);
+            Console.WriteLine("the Maximum sales month is : " + count);
+            Console.WriteLine("the Minimum month sales is : " + count2);
         }
 
         public static void CalculateMinMaxAvg(int[] sales, ref int minMonth, ref int maxMonth, ref double avg)
         {
             //YOUR CODE HERE
             //Assign the result to minMonth, maxMonth and avg variable/parameter accordingly
+            int sum = 0;/*int count = 0;*/
+            for (int i = 0; i<=sales.Length-1 ;i++) {
+                if (sales[i]>maxMonth ) {
+                    maxMonth = sales[i];
+                    count = i + 1;
+                }
+                if (sales[i] < minMonth) {
+                    minMonth = sales[i];
+                    count2 = i + 1;
+                }
+                
+                   sum  = sum + sales[i];
 
+            }
+            avg = sum /12;
 
         }
 
